@@ -27,13 +27,15 @@ public class Tasks {
         }
     }
 
-    public void addTask(){
+    public void addTask(String newtask){
+        newtask = "\n"+newtask;
         try {
             Path filePath = Paths.get("./tasks.txt");
             contentOfTasks.addAll(Files.readAllLines(filePath));
-            Files.write(filePath, "\nFeed the monkey".getBytes(), StandardOpenOption.APPEND);
+            Files.write(filePath, newtask.getBytes(), StandardOpenOption.APPEND);
         } catch (Exception e) {
             System.out.println("File not found...");
+
         }
     }
 

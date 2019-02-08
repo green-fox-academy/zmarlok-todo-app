@@ -16,9 +16,17 @@ public class Main {
                 allTasks.listAllTasks();
                 break;
             case "-a":
-                allTasks.addTask();
-                System.out.println("Task has been added");
-        }
+                try {
+                    if (args[1] != null) {
+                        String newTask = args[1];
+                        allTasks.addTask(newTask);
+                        System.out.println("Task has been added");
+                    }
+                }
+                catch(Exception e){
+                    System.out.println("Unable to add: no task provided");
+                    }
+                }
     }
     public static void printHowToDoAnything(){
         System.out.println("Command Line Todo application\n" +
@@ -29,10 +37,5 @@ public class Main {
                 " -a   Adds a new task\n" +
                 " -r   Removes a task\n" +
                 " -c   Completes a task");
-
-
-
-
     }
-
 }
