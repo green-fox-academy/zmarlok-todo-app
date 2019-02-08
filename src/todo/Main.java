@@ -14,11 +14,11 @@ public class Main {
 
 
         switch (args[0]) {
-            case "l":
+            case "-l":
                 Tasks alltasks = new Tasks();
                 alltasks.listAllTasks();
                 break;
-            case "a":
+            case "-a":
                 System.out.println("THIS FUNCTION WILL ADD A NEW TASK");
         }
     }

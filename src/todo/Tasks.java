@@ -7,25 +7,23 @@ import java.util.ArrayList;
 
 public class Tasks {
 
+    ArrayList<String> contentOfTasks = new ArrayList<>();
+
     public void listAllTasks(){
 
         try {
             Path filePath = Paths.get("./tasks.txt");
-            ArrayList<String> contentOfTasks = new ArrayList<>();
             contentOfTasks.addAll(Files.readAllLines(filePath));
-            int listNumber;
-            for (int i = 0; i < contentOfTasks.size() ; i++) {
-                listNumber = i+1;
-                System.out.println(listNumber + " - " + contentOfTasks.get(i));
-            }
-
         } catch (Exception e){
             System.out.println("File not found...");
         }
-
-        /*System.out.println("\n" +
-                "1 - Walk the dog\n" +
-                "2 - Buy milk\n" +
-                "3 - Do homework");*/
+        int listNumber;
+        if (contentOfTasks.size() == 0){
+            System.out.println("No todos for today! :)");
+        }else
+        for (int i = 0; i < contentOfTasks.size() ; i++) {
+            listNumber = i + 1;
+            System.out.println(listNumber + " - " + contentOfTasks.get(i));
+        }
     }
 }
