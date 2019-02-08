@@ -9,17 +9,15 @@ public class Main {
         if (args.length == 0) {
             printHowToDoAnything();
         }
-
-
-
+        Tasks allTasks = new Tasks();
 
         switch (args[0]) {
             case "-l":
-                Tasks alltasks = new Tasks();
-                alltasks.listAllTasks();
+                allTasks.listAllTasks();
                 break;
             case "-a":
-                System.out.println("THIS FUNCTION WILL ADD A NEW TASK");
+                allTasks.addTask();
+                System.out.println("Task has been added");
         }
     }
     public static void printHowToDoAnything(){
